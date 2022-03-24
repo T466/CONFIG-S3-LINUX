@@ -33,7 +33,8 @@ read -p "Chave de acesso secreta: " chavesecret; echo
 sed -i 's/ID-chave-de-acesso/'$idchave'/' /root/.passwd-s3fs
 sed -i 's/Chave-acesso-secreta/'$chavesecret'/' /root/.passwd-s3fs
 chmod 600 /root/.passwd-s3fs
-clear; echo "CONFIRA ABAIXO O ID da CHAVE DE ACESSO E  A CHAVE DE ACESSO SECRETA DO USUARIO IAM"
+clear; echo; echo "CONFIRA ABAIXO O ID da CHAVE DE ACESSO E A CHAVE DE ACESSO SECRETA DO USUARIO IAM"
+echo
 cat /root/.passwd-s3fs
 sleep 10
 
@@ -48,5 +49,5 @@ read -p "Local onde será montado o bucket S3: " locals3; echo
 
 mkdir $locals3
 /usr/bin/s3fs $names3 $locals3
-clear; echo; echo "O SEU BUCKET S3 ESTA MONTADO EM: $locals3 "
+clear; echo; echo "O SEU BUCKET S3 ESTA MONTADO EM: $locals3 "; echo
 
