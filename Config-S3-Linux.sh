@@ -11,7 +11,8 @@ cd /root/app-s3fs
 clear; echo; echo "AGUARDE A INSTALACAO DO S3"; sleep 3
 wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/s3fs/s3fs-1.61.tar.gz
 clear; echo; echo "AGUARDE A INSTALACAO DO S3"; sleep 3
-cd /root/app-s3fs/s3fs-1.61
+tar -xzvf s3fs-1.61.tar.gz
+cd /root/app-s3fs/s3fs-1.61; sleep 3
 ./configure --prefix=/usr
 clear; echo; echo "AGUARDE A INSTALACAO DO S3"; sleep 3
 make
@@ -44,4 +45,3 @@ read -p "Local onde será montado o bucket S3: " locals3; echo
 
 mkdir $locals3
 /usr/bin/s3fs $names3 $locals3
-
