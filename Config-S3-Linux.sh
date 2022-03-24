@@ -48,3 +48,5 @@ read -p "Local onde será montado o bucket S3: " locals3; echo
 
 mkdir $locals3
 /usr/bin/s3fs $names3 $locals3
+clear; echo; echo "O SEU BUCKET S3 ESTA MONTADO EM: $locals3 "
+
