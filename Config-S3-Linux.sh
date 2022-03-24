@@ -40,7 +40,7 @@ echo "DIGITE O NOME DO BUCKET E DEFINA O LOCAL PARA MONTAR O BUCKET S3"
 echo
 echo "Exempo: buckets3"
 read -p "Nome do bucket S3: " names3; echo
-echo "Exempo: /bucket"
+echo "Exempo: /root/bucket"
 read -p "Local onde será montado o bucket S3: " locals3; echo
 
 mkdir $locals3
