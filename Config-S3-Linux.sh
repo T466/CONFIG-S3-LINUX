@@ -39,22 +39,11 @@ sleep 10
 
 clear
 echo
-echo "ADICIONE o ID da CHAVE DE ACESSO DO USUARIO IAM"
-echo "E ADICIONE A CHAVE DE ACESSO SECRETA DO USUARIO IAM"
-echo
-read -p "ID da chave de acesso: " idchave; echo
-read -p "Chave de acesso secreta: " chavesecret; echo
-
-sed -i 's/ID-chave-de-acesso/'$idchave'/' /root/.passwd-s3fs
-sed -i 's/Chave-acesso-secreta/'$chavesecret'/' /root/.passwd-s3fs
-
-clear
-echo
 echo "DIGITE O NOME DO BUCKET E DEFINA O LOCAL PARA MONTAR O BUCKET S3"
 echo
 echo "Exempo: buckets3"
 read -p "Nome do bucket S3: " names3; echo
-echo "Exempo: /bucket"
+echo "Exempo: /root/bucket"
 read -p "Local onde será montado o bucket S3: " locals3; echo
 
 mkdir $locals3
