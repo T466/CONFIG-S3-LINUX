@@ -19,9 +19,23 @@ make
 clear; echo; echo "AGUARDE A INSTALACAO DO S3"; sleep 3
 make install
 clear; echo; echo "AGUARDE A INSTALACAO DO S3"; sleep 3
+
 touch /root/.passwd-s3fs
-chmod 600 /root/.passwd-s3fs 
-echo "ID-chave-de-acesso:Chave-acesso-secreta" > /root/.passwd-s3fs
+echo ID-chave-de-acesso:Chave-acesso-secreta > /root/.passwd-s3fs
+clear
+echo
+echo "ADICIONE o ID da CHAVE DE ACESSO DO USUARIO IAM"
+echo "E ADICIONE A CHAVE DE ACESSO SECRETA DO USUARIO IAM"
+echo
+read -p "ID da chave de acesso: " idchave; echo
+read -p "Chave de acesso secreta: " chavesecret; echo
+
+sed -i 's/ID-chave-de-acesso/'$idchave'/' /root/.passwd-s3fs
+sed -i 's/Chave-acesso-secreta/'$chavesecret'/' /root/.passwd-s3fs
+chmod 600 /root/.passwd-s3fs
+clear; echo "CONFIRA ABAIXO O ID da CHAVE DE ACESSO E  A CHAVE DE ACESSO SECRETA DO USUARIO IAM"
+cat /root/.passwd-s3fs
+sleep 10
 
 clear
 echo
@@ -31,7 +45,7 @@ echo
 read -p "ID da chave de acesso: " idchave; echo
 read -p "Chave de acesso secreta: " chavesecret; echo
 
-sed -i 's/ID-chave-de-acesso/'$idchave'/' /root/.passwd-s3fs 
+sed -i 's/ID-chave-de-acesso/'$idchave'/' /root/.passwd-s3fs
 sed -i 's/Chave-acesso-secreta/'$chavesecret'/' /root/.passwd-s3fs
 
 clear
@@ -40,7 +54,7 @@ echo "DIGITE O NOME DO BUCKET E DEFINA O LOCAL PARA MONTAR O BUCKET S3"
 echo
 echo "Exempo: buckets3"
 read -p "Nome do bucket S3: " names3; echo
-echo "Exempo: /root/bucket"
+echo "Exempo: /bucket"
 read -p "Local onde será montado o bucket S3: " locals3; echo
 
 mkdir $locals3
