@@ -20,18 +20,6 @@ clear; echo; echo "AGUARDE A INSTALACAO DO S3"; sleep 3
 make install
 clear; echo; echo "AGUARDE A INSTALACAO DO S3"; sleep 3
 
-# touch /root/.passwd-s3fs
-# echo ID-chave-de-acesso:Chave-acesso-secreta > /root/.passwd-s3fs
-clear
-# echo
-# echo "ADICIONE o ID da CHAVE DE ACESSO DO USUARIO IAM"
-# echo "E ADICIONE A CHAVE DE ACESSO SECRETA DO USUARIO IAM"
-# echo
-# read -p "ID da chave de acesso: " idchave; echo
-# read -p "Chave de acesso secreta: " chavesecret; echo
-
-# sed -i 's/ID-chave-de-acesso/'$idchave'/' /root/.passwd-s3fs
-# sed -i 's/Chave-acesso-secreta/'$chavesecret'/' /root/.passwd-s3fs
 chmod 600 /root/.passwd-s3fs
 clear; echo; echo "CONFIRA ABAIXO O ID da CHAVE DE ACESSO E A CHAVE DE ACESSO SECRETA DO USUARIO IAM"
 echo
