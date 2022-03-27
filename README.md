@@ -5,7 +5,12 @@ CONFIG-S3-LINUX  configura o bucket S3 em um sistema Linux
 
 echo ID-chave-de-acesso:Chave-acesso-secreta > /root/.passwd-s3fs
 
-2 - Copie o arquivo Config-S3-Linux.sh em /root, conceda a permissão 755 e execute /root/Config-S3-Linux.sh;
+Savar em /root :
+
+- Config-S3-Linux.sh
+- sync.sh
+
+2 - Conceda a permissão 755 e execute /root/Config-S3-Linux.sh;
 
 3 - Ao final do script siga as instruções configurando o nome do bucket e o local onde ele será montado.
 
