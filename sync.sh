@@ -20,9 +20,6 @@ read -p " Local de origem: " origem; echo
 echo " LOCAL DE DESTINO, Exemplo: /root/bucket"
 read -p " Local de destino: " destino; echo
 
-rsync -aXS $origem/. $destino/.
-
-
 echo "rsync -aXS $origem/. $destino/." > /root/SYNC/sync_data
 cd /root/SYNC/; chmod 775 sync_data
 
