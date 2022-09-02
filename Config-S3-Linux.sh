@@ -1,5 +1,3 @@
-#!/bin/bash
-
 echo; echo "AGUARDE A INSTALACAO DO S3"
 yum update -y
 clear; echo; echo "AGUARDE A INSTALACAO DO S3"; sleep 3
@@ -24,6 +22,7 @@ chmod 600 /root/.passwd-s3fs
 clear; echo; echo "CONFIRA ABAIXO O ID da CHAVE DE ACESSO E A CHAVE DE ACESSO SECRETA DO USUARIO IAM"
 echo
 cat /root/.passwd-s3fs
+cp /root/.passwd-s3fs /etc/passwd-s3fs
 sleep 18
 
 clear
@@ -36,5 +35,7 @@ echo "Exempo: /root/bucket"
 read -p "Local onde será montado o bucket S3: " locals3; echo
 
 mkdir $locals3
-/usr/bin/s3fs $names3 $locals3
+chmod 777 $locals3
+/usr/bin/s3fs $names3 $locals3 -o allow_other -o uid=0 -o gid=0 -o passwd_file=/root/.passwd-s3fs
 clear; echo; echo "O SEU BUCKET S3 ESTA MONTADO EM: $locals3 "; echo
+
