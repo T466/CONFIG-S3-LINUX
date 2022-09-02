@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo; echo "AGUARDE A INSTALACAO DO S3"
 yum update -y
 clear; echo; echo "AGUARDE A INSTALACAO DO S3"; sleep 3
